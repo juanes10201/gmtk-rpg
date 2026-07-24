@@ -25,6 +25,10 @@ var ActivatedSword : bool
 @export var InitialLife : int = 100
 @onready var Life = InitialLife
 
+@export var MainCharacter : bool = true
+
+var OnDamageCooldown = false
+
 func _physics_process(delta: float) -> void:
 	LifeText.text = str(Life)
 	if(RpgFightNode.FightState == Global.FightStates.Fighting):
@@ -60,14 +64,18 @@ func _physics_process(delta: float) -> void:
 
 func on_death() -> void:
 	return
-	
+
+func receive_damage(amount : int = 10) -> void:
+	Life -= amount
 
 func _on_player_hitbox_area_entered(area: Area2D) -> void:
-	on_death()
+	receive_damage()
+	#on_death()
 
 
 func _on_player_hitbox_body_entered(body: Node2D) -> void:
-	on_death()
+	receive_damage()
+	#on_death()
 
 func hit_enemy(enemy : Node2D) -> void:
 	enemy.Life -= 10
@@ -87,4 +95,8 @@ func _on_player_sword_hitbox_area_entered(area: Area2D) -> void:
 
 
 func _on_cooldown_change_fight_state_timeout() -> void:
-	RpgFightNode.FightState = Global.FightStates.Selecting
+	RpgFightNode.change_to_selecting_state()
+
+
+func _on_damage_cooldown_timeout() -> void:
+	OnDamageCooldown = false

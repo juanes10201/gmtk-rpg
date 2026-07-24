@@ -1,14 +1,10 @@
 [gd_scene format=3 uid="uid://djtodusc26gnu"]
 
 [ext_resource type="Script" uid="uid://dmoh2sqab1nnn" path="res://assets/nodes/rpg_fight.gd" id="1_3pp7q"]
+[ext_resource type="Script" uid="uid://0lapf166m4uv" path="res://assets/nodes/fight_players.gd" id="2_kaq00"]
 [ext_resource type="PackedScene" uid="uid://beb7fpbwl5mqh" path="res://assets/nodes/player.tscn" id="2_m48ns"]
 [ext_resource type="Script" uid="uid://sdj185jui6fx" path="res://assets/nodes/rpg_enemy.gd" id="3_m48ns"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_063d2"]
-size = Vector2(50, 85)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pp7q"]
-size = Vector2(63, 111)
+[ext_resource type="PackedScene" uid="uid://ctlk3owu35y8v" path="res://assets/nodes/enemy_bullet.tscn" id="5_tpj2t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kaq00"]
 size = Vector2(851, 69)
@@ -16,66 +12,368 @@ size = Vector2(851, 69)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tpj2t"]
 size = Vector2(78, 429)
 
-[node name="RpgFight" type="Node2D" unique_id=1771515016]
+[sub_resource type="Animation" id="Animation_kaq00"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Ui/Button_Fight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-373, 112)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Ui/Button_Item:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-193, 95)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Ui/Button_Fight:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6o8to"]
+resource_name = "fight_select"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Ui/Button_Fight:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.33333334, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(40, 494), Vector2(-74.552246, 582.3988), Vector2(-179, 663)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Ui/Button_Item:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(367, 527), Vector2(253.16531, 603.9896), Vector2(160, 667)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Ui/Button_Fight:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666666, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Ui/Button_Item:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.93333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tpj2t"]
+resource_name = "select_select"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Ui/Button_Fight:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666664, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-179, 663), Vector2(-37.087982, 553.488), Vector2(40, 494)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Ui/Button_Item:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(160, 667), Vector2(294.13602, 576.28), Vector2(367, 527)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Ui/Button_Fight:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Ui/Button_Item:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k8v2j"]
+_data = {
+&"RESET": SubResource("Animation_kaq00"),
+&"fight_select": SubResource("Animation_6o8to"),
+&"select_select": SubResource("Animation_tpj2t")
+}
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_063d2"]
+size = Vector2(50, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pp7q"]
+size = Vector2(63, 111)
+
+[sub_resource type="Animation" id="Animation_k8v2j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bullets/BulletOffset/EnemyBullet:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bullets/BulletOffset2/EnemyBullet2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bullets/BulletOffset3/EnemyBullet3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bullets/BulletOffset4/EnemyBullet4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bullets/BulletOffset5/EnemyBullet5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bullets/BulletOffset6/EnemyBullet6:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Bullets/BulletOffset7/EnemyBullet7:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Bullets/BulletOffset8/EnemyBullet8:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Bullets/BulletOffset9/EnemyBullet9:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Bullets/BulletOffset10/EnemyBullet10:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1qcql"]
+resource_name = "attack1"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bullets/BulletOffset/EnemyBullet:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 1.9333333, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-140.973, -135.849), Vector2(-950, -131), Vector2(-950, -131)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bullets/BulletOffset2/EnemyBullet2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 1.9333333, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-140.97305, 0), Vector2(-950, 0), Vector2(-950, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bullets/BulletOffset3/EnemyBullet3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 1.9333333, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-141.567, 138.201), Vector2(-954, 161), Vector2(-954, 161)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bullets/BulletOffset4/EnemyBullet4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.3069549, 2.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-140.973, -135.849), Vector2(-950, -131), Vector2(-950, -131)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bullets/BulletOffset5/EnemyBullet5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8666667, 1.3069549, 2.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-140.97305, 0), Vector2(-950, 0), Vector2(-950, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bullets/BulletOffset6/EnemyBullet6:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.3069549, 2.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-141.567, 138.201), Vector2(-954, 161), Vector2(-954, 161)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kmkcm"]
+_data = {
+&"RESET": SubResource("Animation_k8v2j"),
+&"attack1": SubResource("Animation_1qcql")
+}
+
+[node name="RpgFight" type="Node2D" unique_id=1771515016 node_paths=PackedStringArray("UiAnim")]
 script = ExtResource("1_3pp7q")
-
-[node name="Players" type="Node2D" parent="." unique_id=1941357660]
-
-[node name="Button_Fight" type="Button" parent="Players" unique_id=744922803]
-offset_left = -373.0
-offset_top = 112.0
-offset_right = -208.0
-offset_bottom = 186.0
-text = "Fight"
-
-[node name="Button_Spell" type="Button" parent="Players" unique_id=1546991663]
-offset_left = -195.0
-offset_top = 94.0
-offset_right = -30.0
-offset_bottom = 168.0
-text = "Spell
-"
-
-[node name="Button_Item" type="Button" parent="Players" unique_id=1436178919]
-offset_left = -148.0
-offset_top = -2.0
-offset_right = 17.0
-offset_bottom = 72.0
-text = "Item"
-
-[node name="Player" parent="Players" unique_id=1415035536 instance=ExtResource("2_m48ns")]
-position = Vector2(-339, 3)
-
-[node name="Enemy" type="Area2D" parent="." unique_id=245288585 node_paths=PackedStringArray("LifeText") groups=["RpgEnemy"]]
-position = Vector2(344, 0)
-collision_layer = 16
-collision_mask = 0
-script = ExtResource("3_m48ns")
-LifeText = NodePath("LifeText")
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=2117103357]
-texture = SubResource("PlaceholderTexture2D_063d2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=953825150]
-position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_3pp7q")
-debug_color = Color(0, 0.6, 0.69803923, 0.23529412)
-
-[node name="LifeText" type="RichTextLabel" parent="Enemy" unique_id=1714304064]
-offset_left = -69.0
-offset_top = -78.0
-offset_right = 72.0
-offset_bottom = -46.0
-theme_override_font_sizes/normal_font_size = 23
-text = "100/100"
-horizontal_alignment = 1
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=406720630]
-zoom = Vector2(1.355, 1.355)
-limit_left = -440
-limit_top = -270
-limit_right = 430
-limit_bottom = 260
+UiAnim = NodePath("FightPlayers/CanvasLayer/Ui/Ui_anim")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=447749733]
 collision_layer = 2
@@ -96,3 +394,138 @@ shape = SubResource("RectangleShape2D_tpj2t")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=904948424]
 position = Vector2(387, -3)
 shape = SubResource("RectangleShape2D_tpj2t")
+
+[node name="FightPlayers" type="Node2D" parent="." unique_id=1941357660 node_paths=PackedStringArray("RpgFightNode", "Camera")]
+script = ExtResource("2_kaq00")
+RpgFightNode = NodePath("..")
+Camera = NodePath("Camera2D")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="FightPlayers" unique_id=1184266171]
+
+[node name="Ui" type="Control" parent="FightPlayers/CanvasLayer" unique_id=1075539726]
+layout_mode = 3
+anchor_right = 0.0017361111
+anchor_bottom = 0.015432099
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_Fight" type="Button" parent="FightPlayers/CanvasLayer/Ui" unique_id=744922803]
+layout_mode = 0
+offset_left = -373.0
+offset_top = 112.0
+offset_right = -71.82028
+offset_bottom = 211.8598
+theme_override_font_sizes/font_size = 35
+text = "Fight"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_Item" type="Button" parent="FightPlayers/CanvasLayer/Ui" unique_id=1436178919]
+layout_mode = 0
+offset_left = -193.0
+offset_top = 95.0
+offset_right = 93.09924
+offset_bottom = 189.85999
+theme_override_font_sizes/font_size = 35
+text = "Item"
+metadata/_edit_use_anchors_ = true
+
+[node name="Ui_anim" type="AnimationPlayer" parent="FightPlayers/CanvasLayer/Ui" unique_id=1446809802]
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_k8v2j")
+
+[node name="Player" parent="FightPlayers" unique_id=1415035536 node_paths=PackedStringArray("RpgFightNode", "PlayerCamera") groups=["RpgPlayer"] instance=ExtResource("2_m48ns")]
+position = Vector2(-339, 3)
+RpgFightNode = NodePath("../..")
+PlayerCamera = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="FightPlayers" unique_id=406720630]
+zoom = Vector2(1.355, 1.355)
+limit_left = -440
+limit_top = -270
+limit_right = 430
+limit_bottom = 260
+
+[node name="Enemy" type="Area2D" parent="." unique_id=245288585 node_paths=PackedStringArray("LifeText", "BulletAnim", "RpgFightNode") groups=["RpgEnemy"]]
+position = Vector2(344, 0)
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_m48ns")
+LifeText = NodePath("LifeText")
+BulletAnim = NodePath("BulletAnim")
+RpgFightNode = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=2117103357]
+texture = SubResource("PlaceholderTexture2D_063d2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=953825150]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_3pp7q")
+debug_color = Color(0, 0.6, 0.69803923, 0.23529412)
+
+[node name="LifeText" type="RichTextLabel" parent="Enemy" unique_id=1714304064]
+offset_left = -69.0
+offset_top = -78.0
+offset_right = 72.0
+offset_bottom = -46.0
+theme_override_font_sizes/normal_font_size = 23
+text = "100/100"
+horizontal_alignment = 1
+
+[node name="BulletAnim" type="AnimationPlayer" parent="Enemy" unique_id=769107695]
+libraries/ = SubResource("AnimationLibrary_kmkcm")
+
+[node name="Bullets" type="Node2D" parent="Enemy" unique_id=371477971]
+top_level = true
+position = Vector2(423, 0)
+
+[node name="BulletOffset" type="Node2D" parent="Enemy/Bullets" unique_id=708799268]
+position = Vector2(0, 33.135)
+
+[node name="EnemyBullet" parent="Enemy/Bullets/BulletOffset" unique_id=586034982 instance=ExtResource("5_tpj2t")]
+
+[node name="BulletOffset2" type="Node2D" parent="Enemy/Bullets" unique_id=952261022]
+position = Vector2(0, 33.135)
+
+[node name="EnemyBullet2" parent="Enemy/Bullets/BulletOffset2" unique_id=796076666 instance=ExtResource("5_tpj2t")]
+
+[node name="BulletOffset3" type="Node2D" parent="Enemy/Bullets" unique_id=341285197]
+position = Vector2(0, 33.135)
+
+[node name="EnemyBullet3" parent="Enemy/Bullets/BulletOffset3" unique_id=739963036 instance=ExtResource("5_tpj2t")]
+
+[node name="BulletOffset4" type="Node2D" parent="Enemy/Bullets" unique_id=1323914811]
+position = Vector2(0, -73.235)
+
+[node name="EnemyBullet4" parent="Enemy/Bullets/BulletOffset4" unique_id=148647614 instance=ExtResource("5_tpj2t")]
+
+[node name="BulletOffset5" type="Node2D" parent="Enemy/Bullets" unique_id=123660259]
+position = Vector2(0, -73.235)
+
+[node name="EnemyBullet5" parent="Enemy/Bullets/BulletOffset5" unique_id=880680706 instance=ExtResource("5_tpj2t")]
+
+[node name="BulletOffset6" type="Node2D" parent="Enemy/Bullets" unique_id=1671769559]
+position = Vector2(0, -73.235)
+
+[node name="EnemyBullet6" parent="Enemy/Bullets/BulletOffset6" unique_id=1336782104 instance=ExtResource("5_tpj2t")]
+
+[node name="BulletOffset7" type="Node2D" parent="Enemy/Bullets" unique_id=899481616]
+
+[node name="EnemyBullet7" parent="Enemy/Bullets/BulletOffset7" unique_id=1070711016 instance=ExtResource("5_tpj2t")]
+position = Vector2(0, 1)
+
+[node name="BulletOffset8" type="Node2D" parent="Enemy/Bullets" unique_id=771820773]
+
+[node name="EnemyBullet8" parent="Enemy/Bullets/BulletOffset8" unique_id=1441204378 instance=ExtResource("5_tpj2t")]
+
+[node name="BulletOffset9" type="Node2D" parent="Enemy/Bullets" unique_id=1385807720]
+
+[node name="EnemyBullet9" parent="Enemy/Bullets/BulletOffset9" unique_id=1664691999 instance=ExtResource("5_tpj2t")]
+position = Vector2(-1, 1)
+
+[node name="BulletOffset10" type="Node2D" parent="Enemy/Bullets" unique_id=20420713]
+
+[node name="EnemyBullet10" parent="Enemy/Bullets/BulletOffset10" unique_id=1848472683 instance=ExtResource("5_tpj2t")]
+
+[connection signal="button_down" from="FightPlayers/CanvasLayer/Ui/Button_Fight" to="FightPlayers" method="_on_button_fight_button_down"]
+[connection signal="pressed" from="FightPlayers/CanvasLayer/Ui/Button_Item" to="FightPlayers" method="_on_button_item_pressed"]

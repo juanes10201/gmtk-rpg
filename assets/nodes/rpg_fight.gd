@@ -1,16 +1,16 @@
 extends Node2D
 
-var FightState = Global.FightStates.Fighting
+@export var UiAnim : AnimationPlayer
 
-# Called when the node enters the scene tree for the first time.
+var FightState = Global.FightStates.Selecting
+
 func _ready() -> void:
-	pass # Replace with function body.
+	change_to_selecting_state()
 
+func change_to_fight_state() -> void:
+	FightState = Global.FightStates.Fighting
+	UiAnim.play("fight_select")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_player_hitbox_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func change_to_selecting_state() -> void:
+	FightState = Global.FightStates.Selecting
+	UiAnim.play("select_select")
