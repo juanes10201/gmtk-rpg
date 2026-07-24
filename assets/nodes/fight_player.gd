@@ -28,6 +28,12 @@ var ActivatedSword : bool
 @export var MainCharacter : bool = true
 
 var OnDamageCooldown = false
+@export var DamageCooldownTimer : Timer
+
+@export var AnimPlayer : AnimationPlayer
+
+const initial_velocity_knockback : float = -500.0
+var velocity_knockback : float = 0.0 
 
 func _physics_process(delta: float) -> void:
 	LifeText.text = str(Life)
@@ -42,11 +48,18 @@ func _physics_process(delta: float) -> void:
 		else:
 			SPEED = lerpf(SPEED, 0.0, 5*delta)
 		if(direction): last_direction = direction.normalized()
-		PlayerCamera.offset.x = lerpf(PlayerCamera.offset.x, CameraDiffMov*last_direction.x, 5*delta)
-		PlayerCamera.offset.y = lerpf(PlayerCamera.offset.y, CameraDiffMov*last_direction.y, 5*delta)
+		PlayerCamera.offset.x = lerpf(PlayerCamera.offset.x, CameraDiffMov*last_direction.x, 8*delta)
+		PlayerCamera.offset.y = lerpf(PlayerCamera.offset.y, CameraDiffMov*last_direction.y, 8*delta)
 		velocity = last_direction*SPEED
+		if(abs(velocity_knockback) > 200.0):
+			velocity.x = velocity_knockback
+			SPEED = 0.0
+		else:
+			velocity.x += velocity_knockback
+		velocity_knockback = lerpf(velocity_knockback, 0.0, 2*delta)
 		#Sword
 		if(Input.is_action_pressed("player_sword") && TimerSwordCooldown.is_stopped() && TimerSwordActivate.is_stopped()):
+			AnimPlayer.play("Use_Sword")
 			TimerSwordCooldown.start()
 			TimerSwordActivate.start()
 			ActivatedSword = true
@@ -66,7 +79,11 @@ func on_death() -> void:
 	return
 
 func receive_damage(amount : int = 10) -> void:
+	if(!DamageCooldownTimer.is_stopped()): return
 	Life -= amount
+	DamageCooldownTimer.start()
+	AnimPlayer.play("Damage")
+	velocity_knockback = initial_velocity_knockback
 
 func _on_player_hitbox_area_entered(area: Area2D) -> void:
 	receive_damage()

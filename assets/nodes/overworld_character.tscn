@@ -5,6 +5,12 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_02p6q"]
 size = Vector2(32, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47xrx"]
+size = Vector2(109, 101)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1mgn3"]
+size = Vector2(32, 32)
+
 [node name="Character" type="Node2D" unique_id=1015351935]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=419395744 node_paths=PackedStringArray("PlayerCamera")]
@@ -17,3 +23,13 @@ texture = SubResource("PlaceholderTexture2D_02p6q")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1110475365]
 zoom = Vector2(1.5, 1.5)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=298446101]
+position = Vector2(166, -109)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1831077865]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_47xrx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1683283340]
+texture = SubResource("PlaceholderTexture2D_1mgn3")
