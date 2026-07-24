@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://djtodusc26gnu"]
+
+[ext_resource type="Script" uid="uid://dmoh2sqab1nnn" path="res://assets/nodes/rpg_fight.gd" id="1_3pp7q"]
+[ext_resource type="PackedScene" uid="uid://beb7fpbwl5mqh" path="res://assets/nodes/player.tscn" id="2_m48ns"]
+[ext_resource type="Script" uid="uid://sdj185jui6fx" path="res://assets/nodes/rpg_enemy.gd" id="3_m48ns"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_063d2"]
+size = Vector2(50, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pp7q"]
+size = Vector2(63, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaq00"]
+size = Vector2(851, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpj2t"]
+size = Vector2(78, 429)
+
+[node name="RpgFight" type="Node2D" unique_id=1771515016]
+script = ExtResource("1_3pp7q")
+
+[node name="Players" type="Node2D" parent="." unique_id=1941357660]
+
+[node name="Button_Fight" type="Button" parent="Players" unique_id=744922803]
+offset_left = -373.0
+offset_top = 112.0
+offset_right = -208.0
+offset_bottom = 186.0
+text = "Fight"
+
+[node name="Button_Spell" type="Button" parent="Players" unique_id=1546991663]
+offset_left = -195.0
+offset_top = 94.0
+offset_right = -30.0
+offset_bottom = 168.0
+text = "Spell
+"
+
+[node name="Button_Item" type="Button" parent="Players" unique_id=1436178919]
+offset_left = -148.0
+offset_top = -2.0
+offset_right = 17.0
+offset_bottom = 72.0
+text = "Item"
+
+[node name="Player" parent="Players" unique_id=1415035536 instance=ExtResource("2_m48ns")]
+position = Vector2(-339, 3)
+
+[node name="Enemy" type="Area2D" parent="." unique_id=245288585 node_paths=PackedStringArray("LifeText") groups=["RpgEnemy"]]
+position = Vector2(344, 0)
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_m48ns")
+LifeText = NodePath("LifeText")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=2117103357]
+texture = SubResource("PlaceholderTexture2D_063d2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=953825150]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_3pp7q")
+debug_color = Color(0, 0.6, 0.69803923, 0.23529412)
+
+[node name="LifeText" type="RichTextLabel" parent="Enemy" unique_id=1714304064]
+offset_left = -69.0
+offset_top = -78.0
+offset_right = 72.0
+offset_bottom = -46.0
+theme_override_font_sizes/normal_font_size = 23
+text = "100/100"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=406720630]
+zoom = Vector2(1.355, 1.355)
+limit_left = -440
+limit_top = -270
+limit_right = 430
+limit_bottom = 260
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=447749733]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1250301931]
+position = Vector2(0.5, -184.5)
+shape = SubResource("RectangleShape2D_kaq00")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1884187639]
+position = Vector2(2, 175)
+shape = SubResource("RectangleShape2D_kaq00")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1985026596]
+position = Vector2(-456, -4.5)
+shape = SubResource("RectangleShape2D_tpj2t")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=904948424]
+position = Vector2(387, -3)
+shape = SubResource("RectangleShape2D_tpj2t")

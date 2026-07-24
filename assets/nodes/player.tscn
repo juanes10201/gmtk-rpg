@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://beb7fpbwl5mqh"]
+
+[ext_resource type="Script" uid="uid://c4rg35m4powwc" path="res://assets/nodes/fight_player.gd" id="1_wj3lj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6o8to"]
+size = Vector2(131.5, 173)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3pp7q"]
+size = Vector2(111, 166)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_063d2"]
+size = Vector2(50, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pp7q"]
+size = Vector2(63, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m48ns"]
+size = Vector2(36, 64)
+
+[node name="Player" type="CharacterBody2D" unique_id=1415035536 node_paths=PackedStringArray("RpgFightNode", "PlayerCamera", "TimerSwordCooldown", "TimerSwordActivate", "PlayerSwordHitbox", "CooldownChangeFightStateTimer", "LifeText")]
+collision_mask = 3
+script = ExtResource("1_wj3lj")
+RpgFightNode = NodePath("")
+PlayerCamera = NodePath("")
+TimerSwordCooldown = NodePath("PlayerTimerSwordCooldown")
+TimerSwordActivate = NodePath("PlayerTimerSwordActivate")
+PlayerSwordHitbox = NodePath("PlayerSwordHitbox")
+CooldownChangeFightStateTimer = NodePath("CooldownChangeFightState")
+LifeText = NodePath("LifeText")
+
+[node name="PlayerSwordHitbox" type="Area2D" parent="." unique_id=993544951]
+visible = false
+collision_layer = 0
+collision_mask = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSwordHitbox" unique_id=2026504508]
+position = Vector2(42.25, -2.5)
+shape = SubResource("RectangleShape2D_6o8to")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerSwordHitbox" unique_id=837148348]
+position = Vector2(32, -4)
+texture = SubResource("PlaceholderTexture2D_3pp7q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=226833519]
+texture = SubResource("PlaceholderTexture2D_063d2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=492695639]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_3pp7q")
+debug_color = Color(0, 0.6, 0.69803923, 0.23529412)
+
+[node name="PlayerHitbox" type="Area2D" parent="." unique_id=649982451]
+collision_layer = 0
+collision_mask = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox" unique_id=1984669997]
+shape = SubResource("RectangleShape2D_m48ns")
+
+[node name="PlayerTimerSwordCooldown" type="Timer" parent="." unique_id=1977040014]
+wait_time = 0.5
+one_shot = true
+
+[node name="PlayerTimerSwordActivate" type="Timer" parent="." unique_id=1088808327]
+wait_time = 0.2
+one_shot = true
+
+[node name="CooldownChangeFightState" type="Timer" parent="." unique_id=1728862783]
+wait_time = 0.2
+one_shot = true
+
+[node name="LifeText" type="RichTextLabel" parent="." unique_id=218966026]
+offset_left = -69.0
+offset_top = -78.0
+offset_right = 72.0
+offset_bottom = -46.0
+theme_override_font_sizes/normal_font_size = 23
+text = "100/100"
+horizontal_alignment = 1
+
+[connection signal="area_entered" from="PlayerSwordHitbox" to="." method="_on_player_sword_hitbox_area_entered"]
+[connection signal="body_entered" from="PlayerSwordHitbox" to="." method="_on_player_sword_hitbox_body_entered"]
+[connection signal="area_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_area_entered"]
+[connection signal="body_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="timeout" from="CooldownChangeFightState" to="." method="_on_cooldown_change_fight_state_timeout"]
