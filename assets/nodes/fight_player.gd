@@ -35,6 +35,8 @@ var OnDamageCooldown = false
 const initial_velocity_knockback : float = -500.0
 var velocity_knockback : float = 0.0 
 
+var Type = Global.PlayerTypes.Regular
+
 func _physics_process(delta: float) -> void:
 	LifeText.text = str(Life)
 	if(RpgFightNode.FightState == Global.FightStates.Fighting):
@@ -46,7 +48,7 @@ func _physics_process(delta: float) -> void:
 			SPEED += ACC*delta
 			SPEED = clamp(SPEED, INITIAL_ACC, MAX_SPEED)
 		else:
-			SPEED = lerpf(SPEED, 0.0, 5*delta)
+			SPEED = lerpf(SPEED, 0.0, 10*delta)
 		if(direction): last_direction = direction.normalized()
 		PlayerCamera.offset.x = lerpf(PlayerCamera.offset.x, CameraDiffMov*last_direction.x, 8*delta)
 		PlayerCamera.offset.y = lerpf(PlayerCamera.offset.y, CameraDiffMov*last_direction.y, 8*delta)
@@ -80,6 +82,7 @@ func on_death() -> void:
 
 func receive_damage(amount : int = 10) -> void:
 	if(!DamageCooldownTimer.is_stopped()): return
+	if(!CooldownChangeFightStateTimer.is_stopped()): return
 	Life -= amount
 	DamageCooldownTimer.start()
 	AnimPlayer.play("Damage")

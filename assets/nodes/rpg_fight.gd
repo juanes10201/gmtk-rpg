@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var UiAnim : AnimationPlayer
+@export var FightPlayersNode : Node2D
 
 var FightState = Global.FightStates.Selecting
 
@@ -13,4 +14,5 @@ func change_to_fight_state() -> void:
 
 func change_to_selecting_state() -> void:
 	FightState = Global.FightStates.Selecting
+	FightPlayersNode.SelectedPlayer = 0
 	UiAnim.play("select_select")

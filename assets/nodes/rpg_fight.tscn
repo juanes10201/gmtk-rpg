@@ -2,9 +2,28 @@
 
 [ext_resource type="Script" uid="uid://dmoh2sqab1nnn" path="res://assets/nodes/rpg_fight.gd" id="1_3pp7q"]
 [ext_resource type="Script" uid="uid://0lapf166m4uv" path="res://assets/nodes/fight_players.gd" id="2_kaq00"]
+[ext_resource type="Shader" uid="uid://bjb0u12hxygkw" path="res://assets/shaders/bg2.gdshader" id="2_kmkcm"]
 [ext_resource type="PackedScene" uid="uid://beb7fpbwl5mqh" path="res://assets/nodes/player.tscn" id="2_m48ns"]
+[ext_resource type="PackedScene" uid="uid://dewehi7i1rpii" path="res://assets/nodes/secondary_character.tscn" id="3_6o8to"]
+[ext_resource type="Script" uid="uid://gr3ogeslu1rl" path="res://assets/nodes/ui.gd" id="3_k8v2j"]
+[ext_resource type="Texture2D" uid="uid://cw0tdneowobj0" path="res://assets/sprites/placeholder/testbg.png" id="3_kmkcm"]
 [ext_resource type="Script" uid="uid://sdj185jui6fx" path="res://assets/nodes/rpg_enemy.gd" id="3_m48ns"]
+[ext_resource type="Script" uid="uid://cq60nvd0f32bp" path="res://assets/nodes/bg_rect_shader.gd" id="4_df32s"]
 [ext_resource type="PackedScene" uid="uid://ctlk3owu35y8v" path="res://assets/nodes/enemy_bullet.tscn" id="5_tpj2t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sxts4"]
+shader = ExtResource("2_kmkcm")
+shader_parameter/screen_height = 1451.0
+shader_parameter/amplitude = 0.04
+shader_parameter/frequency = 7.32
+shader_parameter/speed = 0.855
+shader_parameter/amplitude_vertical = 0.0
+shader_parameter/frequency_vertical = 0.0
+shader_parameter/speed_vertical = 0.0
+shader_parameter/scroll_direction = Vector2(0, 0)
+shader_parameter/scrolling_speed = 0.08
+shader_parameter/enable_palette_cycling = false
+shader_parameter/palette_speed = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kaq00"]
 size = Vector2(851, 69)
@@ -856,9 +875,24 @@ _data = {
 &"attack2": SubResource("Animation_kmkcm")
 }
 
-[node name="RpgFight" type="Node2D" unique_id=1771515016 node_paths=PackedStringArray("UiAnim")]
+[node name="RpgFight" type="Node2D" unique_id=1771515016 node_paths=PackedStringArray("UiAnim", "FightPlayersNode")]
 script = ExtResource("1_3pp7q")
 UiAnim = NodePath("FightPlayers/CanvasLayer/Ui/Ui_anim")
+FightPlayersNode = NodePath("FightPlayers")
+
+[node name="Bg" type="Node2D" parent="." unique_id=1094077939]
+
+[node name="BgRectShader" type="TextureRect" parent="Bg" unique_id=1397593530]
+visible = false
+material = SubResource("ShaderMaterial_sxts4")
+offset_left = -1104.0
+offset_top = -528.0
+offset_right = 1056.0
+offset_bottom = 923.0
+texture = ExtResource("3_kmkcm")
+stretch_mode = 1
+script = ExtResource("4_df32s")
+metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=447749733]
 collision_layer = 2
@@ -887,12 +921,16 @@ Camera = NodePath("Camera2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="FightPlayers" unique_id=1184266171]
 
-[node name="Ui" type="Control" parent="FightPlayers/CanvasLayer" unique_id=1075539726]
+[node name="Ui" type="Control" parent="FightPlayers/CanvasLayer" unique_id=1075539726 node_paths=PackedStringArray("FightPlayersNode", "ButtonFight", "ButtonItem")]
 layout_mode = 3
 anchor_right = 0.0017361111
 anchor_bottom = 0.015432099
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("3_k8v2j")
+FightPlayersNode = NodePath("../..")
+ButtonFight = NodePath("Button_Fight")
+ButtonItem = NodePath("Button_Item")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button_Fight" type="Button" parent="FightPlayers/CanvasLayer/Ui" unique_id=744922803]
@@ -919,7 +957,13 @@ metadata/_edit_use_anchors_ = true
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_k8v2j")
 
-[node name="Player" parent="FightPlayers" unique_id=1415035536 node_paths=PackedStringArray("RpgFightNode", "PlayerCamera") groups=["RpgPlayer"] instance=ExtResource("2_m48ns")]
+[node name="SecondaryCharacter2" parent="FightPlayers" unique_id=1249150304 groups=["RpgPlayer"] instance=ExtResource("3_6o8to")]
+position = Vector2(-376, -40)
+
+[node name="SecondaryCharacter" parent="FightPlayers" unique_id=1527396288 groups=["RpgPlayer"] instance=ExtResource("3_6o8to")]
+position = Vector2(-360, -16)
+
+[node name="Player" parent="FightPlayers" unique_id=2141969072 node_paths=PackedStringArray("RpgFightNode", "PlayerCamera") groups=["RpgPlayer"] instance=ExtResource("2_m48ns")]
 position = Vector2(-339, 3)
 RpgFightNode = NodePath("../..")
 PlayerCamera = NodePath("../Camera2D")
