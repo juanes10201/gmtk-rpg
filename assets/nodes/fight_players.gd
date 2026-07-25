@@ -41,7 +41,14 @@ func _process(delta: float) -> void:
 
 func _on_button_fight_button_down() -> void:
 	if(RpgFightNode.FightState == Global.FightStates.Selecting):
+		if(SelectedNodeTypePlayer == Global.PlayerTypes.Mague):
+			RpgFightNode.CallSpell(Global.Spells.Ice)
 		go_select_next_player()
 
 func _on_button_item_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_button_skip_button_up() -> void:
+	if(RpgFightNode.FightState == Global.FightStates.Selecting):
+		go_select_next_player()

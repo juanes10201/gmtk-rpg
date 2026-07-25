@@ -12,8 +12,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(FightPlayersNode.SelectedNodeTypePlayer == Global.PlayerTypes.Mague):
-		ButtonFight.text = "Freeze"
-		ButtonItem.text = "Heal"
+		ButtonFight.text = "Freeze\nCosts 20 lv"
+		ButtonItem.text = "Faster Speed\nCosts 10 Lv"
 	else:
 		ButtonFight.text = "Fight"
 		ButtonItem.text = "Item"

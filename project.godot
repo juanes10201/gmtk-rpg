@@ -23,9 +23,12 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 directories/dch_directory={}
 directories/dtl_directory={
+"intro": "res://assets/dialogic/intro.dtl",
 "test-timeline": "res://assets/dialogic/test-timeline.dtl"
 }
 layout/style_directory={}
+layout/style_list=["res://assets/dialogic/visualnovelstyle.tres"]
+layout/default_style="res://assets/dialogic/visualnovelstyle.tres"
 
 [editor_plugins]
 

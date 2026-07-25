@@ -69,6 +69,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Ui/Button_Skip:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-360.135, 368)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Ui/Button_Skip:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_6o8to"]
 resource_name = "fight_select"
@@ -120,6 +144,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Ui/Button_Skip:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.03333336, 0.33333334, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(40, 368), Vector2(-86.72, 450.848), Vector2(-320, 543.645)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Ui/Button_Skip:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.03333333, 0.93333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_tpj2t"]
 resource_name = "select_select"
@@ -167,6 +215,30 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Ui/Button_Skip:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-320, 512), Vector2(-86.71997, 418.688), Vector2(40, 368)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Ui/Button_Skip:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.06666667, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -238,7 +310,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Bullets/BulletOffset5/EnemyBullet5:position")
+tracks/4/path = NodePath("Bullets/BulletOffset6/EnemyBullet6:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -250,7 +322,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Bullets/BulletOffset6/EnemyBullet6:position")
+tracks/5/path = NodePath("Bullets/BulletOffset8/EnemyBullet8:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -262,7 +334,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Bullets/BulletOffset7/EnemyBullet7:position")
+tracks/6/path = NodePath("Bullets/BulletOffset10/EnemyBullet10:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -274,11 +346,11 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Bullets/BulletOffset8/EnemyBullet8:position")
+tracks/7/path = NodePath("Bullets/BulletOffset2:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.0009999999),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
@@ -286,11 +358,11 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Bullets/BulletOffset9/EnemyBullet9:position")
+tracks/8/path = NodePath("Bullets/BulletOffset3:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.0009999999),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
@@ -298,11 +370,11 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Bullets/BulletOffset10/EnemyBullet10:position")
+tracks/9/path = NodePath("Bullets/BulletOffset5:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0.0009999999),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
@@ -310,7 +382,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Bullets/BulletOffset2:position")
+tracks/10/path = NodePath("Bullets/BulletOffset6:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -322,7 +394,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Bullets/BulletOffset3:position")
+tracks/11/path = NodePath("Bullets/BulletOffset8:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -334,7 +406,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Bullets/BulletOffset4:position")
+tracks/12/path = NodePath("Bullets/BulletOffset10:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -346,82 +418,10 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Bullets/BulletOffset5:position")
+tracks/13/path = NodePath("Bullets/BulletOffset:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Bullets/BulletOffset6:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Bullets/BulletOffset7:position")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Bullets/BulletOffset8:position")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Bullets/BulletOffset9:position")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("Bullets/BulletOffset10:position")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("Bullets/BulletOffset:position")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -435,31 +435,31 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Bullets/BulletOffset/EnemyBullet:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.26666668, 1.9333333, 2.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 1.9333333, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-140.973, -135.849), Vector2(-950, -131), Vector2(-950, -131)]
+"values": [Vector2(0, 0), Vector2(-71.279, -91.047), Vector2(-140.973, -135.849), Vector2(-950, -131), Vector2(-950, -131)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Bullets/BulletOffset2/EnemyBullet2:position")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.26666668, 1.9333333, 2.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 1.9333333, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-140.97305, 0), Vector2(-950, 0), Vector2(-950, 0)]
+"values": [Vector2(0, 0), Vector2(-71.279, 35.135), Vector2(-140.97305, 0), Vector2(-950, 0), Vector2(-950, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("Bullets/BulletOffset3/EnemyBullet3:position")
-tracks/2/interp = 1
+tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.26666668, 1.9333333, 2.9),
@@ -471,7 +471,7 @@ tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/path = NodePath("Bullets/BulletOffset4/EnemyBullet4:position")
-tracks/3/interp = 1
+tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.9, 1.3069549, 2.9, 3),
@@ -482,32 +482,32 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Bullets/BulletOffset5/EnemyBullet5:position")
-tracks/4/interp = 1
+tracks/4/path = NodePath("Bullets/BulletOffset6/EnemyBullet6:position")
+tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.8666667, 1.3069549, 2.9, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.9, 1.1, 1.3069549, 2.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-140.97305, 0), Vector2(-950, 0), Vector2(-950, 0)]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-73.435, 138.915), Vector2(-141.567, 138.201), Vector2(-954, 161), Vector2(-954, 161)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Bullets/BulletOffset6/EnemyBullet6:position")
-tracks/5/interp = 1
+tracks/5/path = NodePath("Bullets/BulletOffset:position")
+tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.9, 1.3069549, 2.9, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-141.567, 138.201), Vector2(-954, 161), Vector2(-954, 161)]
+"values": [Vector2(0, 33.135)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Bullets/BulletOffset:position")
-tracks/6/interp = 1
+tracks/6/path = NodePath("Bullets/BulletOffset2:position")
+tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
@@ -518,8 +518,8 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Bullets/BulletOffset2:position")
-tracks/7/interp = 1
+tracks/7/path = NodePath("Bullets/BulletOffset3:position")
+tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
@@ -530,20 +530,20 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Bullets/BulletOffset3:position")
-tracks/8/interp = 1
+tracks/8/path = NodePath("Bullets/BulletOffset5:position")
+tracks/8/interp = 2
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(0, 33.135)]
+"values": []
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Bullets/BulletOffset4:position")
-tracks/9/interp = 1
+tracks/9/path = NodePath("Bullets/BulletOffset6:position")
+tracks/9/interp = 2
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
@@ -554,70 +554,22 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Bullets/BulletOffset5:position")
-tracks/10/interp = 1
+tracks/10/path = NodePath("Bullets/BulletOffset8:position")
+tracks/10/interp = 2
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -73.235)]
+"values": [Vector2(0, 0)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Bullets/BulletOffset6:position")
-tracks/11/interp = 1
+tracks/11/path = NodePath("Bullets/BulletOffset10:position")
+tracks/11/interp = 2
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -73.235)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Bullets/BulletOffset7:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Bullets/BulletOffset8:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Bullets/BulletOffset9:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Bullets/BulletOffset10:position")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
 "times": PackedFloat32Array(0.033333335),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -631,127 +583,127 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Bullets/BulletOffset/EnemyBullet:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2.5333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(100, 0), Vector2(-879, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Bullets/BulletOffset2/EnemyBullet2:position")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.0333333, 1.6, 2.5666666),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-231, 144), Vector2(-231, 144), Vector2(-231, -112)]
+"values": [Vector2(100, 0), Vector2(-231, 144), Vector2(-231, 144), Vector2(-231, -112)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("Bullets/BulletOffset3/EnemyBullet3:position")
-tracks/2/interp = 1
+tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 1.6333333, 2.5333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.36666667, 1, 1.6333333, 2.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-423, 144), Vector2(-423, 144), Vector2(-423, -112)]
+"values": [Vector2(100, 0), Vector2(-44.323, 68.457), Vector2(-423, 144), Vector2(-423, 144), Vector2(-423, -112)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/path = NodePath("Bullets/BulletOffset4/EnemyBullet4:position")
-tracks/3/interp = 1
+tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.0009999999, 1.0333333, 1.6, 2.5666666),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.0009999999, 0.36666667, 1.0333333, 1.6, 2.5666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-615, 144), Vector2(-615, 144), Vector2(-615, -112)]
+"values": [Vector2(100, 0), Vector2(-87.948, 72.892), Vector2(-615, 144), Vector2(-615, 144), Vector2(-615, -112)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Bullets/BulletOffset5/EnemyBullet5:position")
-tracks/4/interp = 1
+tracks/4/path = NodePath("Bullets/BulletOffset6/EnemyBullet6:position")
+tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.0009999999),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.0009999999, 0.3, 1.0333333, 1.6, 2.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(100, 0), Vector2(-78.046, 71.902), Vector2(-823, 144), Vector2(-823, 144), Vector2(-823, -112)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Bullets/BulletOffset6/EnemyBullet6:position")
-tracks/5/interp = 1
+tracks/5/path = NodePath("Bullets/BulletOffset8/EnemyBullet8:position")
+tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.0009999999, 1.0333333, 1.6, 2.5333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.0009999999, 0.36666667, 1.0333333, 1.33, 2.5666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-823, 144), Vector2(-823, 144), Vector2(-823, -112)]
+"values": [Vector2(100, 0), Vector2(-43.11, -66.912), Vector2(-423, -112), Vector2(-423, -112), Vector2(-423, 132.33)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Bullets/BulletOffset7/EnemyBullet7:position")
-tracks/6/interp = 1
+tracks/6/path = NodePath("Bullets/BulletOffset10/EnemyBullet10:position")
+tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.0009999999, 1.0333333, 2.5333333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.0009999999, 0.3, 1.0666667, 1.3633335, 2.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-231, 0), Vector2(1, 0)]
+"values": [Vector2(100, 0), Vector2(-75.805, -67.863), Vector2(-823, -112), Vector2(-823, -112), Vector2(-823, 128.085)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Bullets/BulletOffset8/EnemyBullet8:position")
-tracks/7/interp = 1
+tracks/7/path = NodePath("Bullets/BulletOffset2:position")
+tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.0009999999, 1.0333333, 1.6, 2.5666666),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-423, 0), Vector2(-423, -112), Vector2(-423, -112)]
+"values": [Vector2(0, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Bullets/BulletOffset9/EnemyBullet9:position")
-tracks/8/interp = 1
+tracks/8/path = NodePath("Bullets/BulletOffset3:position")
+tracks/8/interp = 2
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.0009999999, 1.0333333, 2.5666666),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-615, 0), Vector2(1, 0)]
+"values": [Vector2(0, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Bullets/BulletOffset10/EnemyBullet10:position")
-tracks/9/interp = 1
+tracks/9/path = NodePath("Bullets/BulletOffset5:position")
+tracks/9/interp = 2
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0.0009999999, 1.0333333, 1.6, 2.5333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-823, 0), Vector2(-823, -112), Vector2(-823, -112)]
+"values": []
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Bullets/BulletOffset2:position")
-tracks/10/interp = 1
+tracks/10/path = NodePath("Bullets/BulletOffset6:position")
+tracks/10/interp = 2
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
@@ -762,8 +714,8 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Bullets/BulletOffset3:position")
-tracks/11/interp = 1
+tracks/11/path = NodePath("Bullets/BulletOffset8:position")
+tracks/11/interp = 2
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
@@ -774,8 +726,8 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Bullets/BulletOffset4:position")
-tracks/12/interp = 1
+tracks/12/path = NodePath("Bullets/BulletOffset10:position")
+tracks/12/interp = 2
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
@@ -786,82 +738,10 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Bullets/BulletOffset5:position")
-tracks/13/interp = 1
+tracks/13/path = NodePath("Bullets/BulletOffset:position")
+tracks/13/interp = 2
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Bullets/BulletOffset6:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Bullets/BulletOffset7:position")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Bullets/BulletOffset8:position")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Bullets/BulletOffset9:position")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("Bullets/BulletOffset10:position")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("Bullets/BulletOffset:position")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -875,10 +755,12 @@ _data = {
 &"attack2": SubResource("Animation_kmkcm")
 }
 
-[node name="RpgFight" type="Node2D" unique_id=1771515016 node_paths=PackedStringArray("UiAnim", "FightPlayersNode")]
+[node name="RpgFight" type="Node2D" unique_id=1771515016 node_paths=PackedStringArray("UiAnim", "FightPlayersNode", "MainPlayer", "AllEnemiesNode")]
 script = ExtResource("1_3pp7q")
 UiAnim = NodePath("FightPlayers/CanvasLayer/Ui/Ui_anim")
 FightPlayersNode = NodePath("FightPlayers")
+MainPlayer = NodePath("FightPlayers/Player")
+AllEnemiesNode = NodePath("Enemies")
 
 [node name="Bg" type="Node2D" parent="." unique_id=1094077939]
 
@@ -938,16 +820,32 @@ layout_mode = 0
 offset_left = -373.0
 offset_top = 112.0
 offset_right = -71.82028
-offset_bottom = 211.8598
+offset_bottom = 211.86005
 theme_override_font_sizes/font_size = 35
 text = "Fight"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_Skip" type="Button" parent="FightPlayers/CanvasLayer/Ui" unique_id=1182979406]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -8.571428
+anchor_top = 0.36
+anchor_right = -8.571428
+anchor_bottom = 0.36
+offset_left = -0.13500977
+offset_top = 350.0
+offset_right = 301.0445
+offset_bottom = 449.85944
+theme_override_font_sizes/font_size = 35
+text = "Skip"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button_Item" type="Button" parent="FightPlayers/CanvasLayer/Ui" unique_id=1436178919]
 layout_mode = 0
 offset_left = -193.0
 offset_top = 95.0
-offset_right = 93.09924
+offset_right = 93.09888
 offset_bottom = 189.85999
 theme_override_font_sizes/font_size = 35
 text = "Item"
@@ -958,13 +856,13 @@ root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_k8v2j")
 
 [node name="SecondaryCharacter2" parent="FightPlayers" unique_id=1249150304 groups=["RpgPlayer"] instance=ExtResource("3_6o8to")]
-position = Vector2(-376, -40)
+position = Vector2(-336, -32)
 
 [node name="SecondaryCharacter" parent="FightPlayers" unique_id=1527396288 groups=["RpgPlayer"] instance=ExtResource("3_6o8to")]
-position = Vector2(-360, -16)
+position = Vector2(-352, 0)
 
 [node name="Player" parent="FightPlayers" unique_id=2141969072 node_paths=PackedStringArray("RpgFightNode", "PlayerCamera") groups=["RpgPlayer"] instance=ExtResource("2_m48ns")]
-position = Vector2(-339, 3)
+position = Vector2(-320, 24)
 RpgFightNode = NodePath("../..")
 PlayerCamera = NodePath("../Camera2D")
 
@@ -975,24 +873,26 @@ limit_top = -270
 limit_right = 430
 limit_bottom = 260
 
-[node name="Enemy" type="Area2D" parent="." unique_id=245288585 node_paths=PackedStringArray("LifeText", "BulletAnim", "RpgFightNode") groups=["RpgEnemy"]]
+[node name="Enemies" type="Node2D" parent="." unique_id=808499461]
+
+[node name="Enemy" type="Area2D" parent="Enemies" unique_id=245288585 node_paths=PackedStringArray("LifeText", "BulletAnim", "RpgFightNode") groups=["RpgEnemy"]]
 position = Vector2(344, 0)
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("3_m48ns")
 LifeText = NodePath("LifeText")
 BulletAnim = NodePath("BulletAnim")
-RpgFightNode = NodePath("..")
+RpgFightNode = NodePath("../..")
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=2117103357]
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy" unique_id=2117103357]
 texture = SubResource("PlaceholderTexture2D_063d2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=953825150]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy" unique_id=953825150]
 position = Vector2(0.5, -1.5)
 shape = SubResource("RectangleShape2D_3pp7q")
 debug_color = Color(0, 0.6, 0.69803923, 0.23529412)
 
-[node name="LifeText" type="RichTextLabel" parent="Enemy" unique_id=1714304064]
+[node name="LifeText" type="RichTextLabel" parent="Enemies/Enemy" unique_id=1714304064]
 offset_left = -69.0
 offset_top = -78.0
 offset_right = 72.0
@@ -1001,54 +901,41 @@ theme_override_font_sizes/normal_font_size = 23
 text = "100/100"
 horizontal_alignment = 1
 
-[node name="BulletAnim" type="AnimationPlayer" parent="Enemy" unique_id=769107695]
+[node name="BulletAnim" type="AnimationPlayer" parent="Enemies/Enemy" unique_id=769107695]
 libraries/ = SubResource("AnimationLibrary_kmkcm")
 
-[node name="Bullets" type="Node2D" parent="Enemy" unique_id=371477971]
+[node name="Bullets" type="Node2D" parent="Enemies/Enemy" unique_id=371477971]
 top_level = true
 position = Vector2(423, 0)
 
-[node name="BulletOffset" type="Node2D" parent="Enemy/Bullets" unique_id=708799268]
+[node name="BulletOffset" type="Node2D" parent="Enemies/Enemy/Bullets" unique_id=708799268]
 
-[node name="EnemyBullet" parent="Enemy/Bullets/BulletOffset" unique_id=586034982 instance=ExtResource("5_tpj2t")]
+[node name="EnemyBullet" parent="Enemies/Enemy/Bullets/BulletOffset" unique_id=586034982 instance=ExtResource("5_tpj2t")]
 
-[node name="BulletOffset2" type="Node2D" parent="Enemy/Bullets" unique_id=952261022]
+[node name="BulletOffset2" type="Node2D" parent="Enemies/Enemy/Bullets" unique_id=952261022]
 
-[node name="EnemyBullet2" parent="Enemy/Bullets/BulletOffset2" unique_id=796076666 instance=ExtResource("5_tpj2t")]
+[node name="EnemyBullet2" parent="Enemies/Enemy/Bullets/BulletOffset2" unique_id=796076666 instance=ExtResource("5_tpj2t")]
 
-[node name="BulletOffset3" type="Node2D" parent="Enemy/Bullets" unique_id=341285197]
+[node name="BulletOffset3" type="Node2D" parent="Enemies/Enemy/Bullets" unique_id=341285197]
 
-[node name="EnemyBullet3" parent="Enemy/Bullets/BulletOffset3" unique_id=739963036 instance=ExtResource("5_tpj2t")]
+[node name="EnemyBullet3" parent="Enemies/Enemy/Bullets/BulletOffset3" unique_id=739963036 instance=ExtResource("5_tpj2t")]
 
-[node name="BulletOffset4" type="Node2D" parent="Enemy/Bullets" unique_id=1323914811]
+[node name="BulletOffset4" type="Node2D" parent="Enemies/Enemy/Bullets" unique_id=1323914811]
 
-[node name="EnemyBullet4" parent="Enemy/Bullets/BulletOffset4" unique_id=148647614 instance=ExtResource("5_tpj2t")]
+[node name="EnemyBullet4" parent="Enemies/Enemy/Bullets/BulletOffset4" unique_id=148647614 instance=ExtResource("5_tpj2t")]
 
-[node name="BulletOffset5" type="Node2D" parent="Enemy/Bullets" unique_id=123660259]
+[node name="BulletOffset6" type="Node2D" parent="Enemies/Enemy/Bullets" unique_id=1671769559]
 
-[node name="EnemyBullet5" parent="Enemy/Bullets/BulletOffset5" unique_id=880680706 instance=ExtResource("5_tpj2t")]
+[node name="EnemyBullet6" parent="Enemies/Enemy/Bullets/BulletOffset6" unique_id=1336782104 instance=ExtResource("5_tpj2t")]
 
-[node name="BulletOffset6" type="Node2D" parent="Enemy/Bullets" unique_id=1671769559]
+[node name="BulletOffset8" type="Node2D" parent="Enemies/Enemy/Bullets" unique_id=771820773]
 
-[node name="EnemyBullet6" parent="Enemy/Bullets/BulletOffset6" unique_id=1336782104 instance=ExtResource("5_tpj2t")]
+[node name="EnemyBullet8" parent="Enemies/Enemy/Bullets/BulletOffset8" unique_id=1441204378 instance=ExtResource("5_tpj2t")]
 
-[node name="BulletOffset7" type="Node2D" parent="Enemy/Bullets" unique_id=899481616]
+[node name="BulletOffset10" type="Node2D" parent="Enemies/Enemy/Bullets" unique_id=20420713]
 
-[node name="EnemyBullet7" parent="Enemy/Bullets/BulletOffset7" unique_id=1070711016 instance=ExtResource("5_tpj2t")]
-position = Vector2(1, 0)
-
-[node name="BulletOffset8" type="Node2D" parent="Enemy/Bullets" unique_id=771820773]
-
-[node name="EnemyBullet8" parent="Enemy/Bullets/BulletOffset8" unique_id=1441204378 instance=ExtResource("5_tpj2t")]
-
-[node name="BulletOffset9" type="Node2D" parent="Enemy/Bullets" unique_id=1385807720]
-
-[node name="EnemyBullet9" parent="Enemy/Bullets/BulletOffset9" unique_id=1664691999 instance=ExtResource("5_tpj2t")]
-position = Vector2(1, 0)
-
-[node name="BulletOffset10" type="Node2D" parent="Enemy/Bullets" unique_id=20420713]
-
-[node name="EnemyBullet10" parent="Enemy/Bullets/BulletOffset10" unique_id=1848472683 instance=ExtResource("5_tpj2t")]
+[node name="EnemyBullet10" parent="Enemies/Enemy/Bullets/BulletOffset10" unique_id=1848472683 instance=ExtResource("5_tpj2t")]
 
 [connection signal="button_down" from="FightPlayers/CanvasLayer/Ui/Button_Fight" to="FightPlayers" method="_on_button_fight_button_down"]
+[connection signal="button_up" from="FightPlayers/CanvasLayer/Ui/Button_Skip" to="FightPlayers" method="_on_button_skip_button_up"]
 [connection signal="pressed" from="FightPlayers/CanvasLayer/Ui/Button_Item" to="FightPlayers" method="_on_button_item_pressed"]
